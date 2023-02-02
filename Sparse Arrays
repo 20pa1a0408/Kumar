@@ -1,0 +1,13 @@
+s=int(input())
+S=[]
+for i in range (s):
+  t=input()
+  S.append(t)
+q=int(input())
+Q=[]
+for i in range (q):
+  t=input()
+  Q.append(t)
+d=[]
+for i in Q:
+  print(S.count(i))
