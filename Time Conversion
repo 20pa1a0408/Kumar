@@ -1,0 +1,19 @@
+s=input()
+if(s[len(s)-2:len(s)]=="PM"):
+  r=s[0:2]
+  t=""
+  if(r=="12"):
+    t+="12"
+  else:
+    t+=str(int(s[0:2])+12)
+  t+=s[2:len(s)-2]  
+  print(t)
+if(s[len(s)-2:len(s)]=="AM"):
+  r=s[0:2]
+  t=""
+  if(r=="12"):
+    t+="00"
+  else:
+    t+=s[0:2]
+  t+=s[2:len(s)-2]
+  print(t)
