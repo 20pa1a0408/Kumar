@@ -1,0 +1,5 @@
+d=[int(x) for x in input().split()]
+s=0
+for i in d:
+  s+=i
+print(s-max(d),s-min(d))
