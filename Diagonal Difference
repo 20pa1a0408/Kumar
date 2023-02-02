@@ -1,0 +1,13 @@
+n=int(input())
+matrix = []
+for row in range(n):    
+    a = [int(x) for x in input().split()]
+    matrix.append(a)
+s1=0
+for i in range(n):
+  s1+=matrix[i][i]
+matrix.reverse()
+s2=0
+for i in range(n):
+  s2+=matrix[i][i]
+print(abs(s1-s2))
