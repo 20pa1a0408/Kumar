@@ -1,0 +1,10 @@
+s=input()
+a=s.lower()
+t="abcdefghijklmnopqrstuvwxyz"
+for i in t:
+  if i==" ":
+    continue
+  if i not in a:
+    print("not pangram")
+    break
+else:print("pangram")
