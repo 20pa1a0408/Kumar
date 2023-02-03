@@ -1,0 +1,36 @@
+import math
+import os
+import random
+import re
+import sys
+
+def caesarCipher(s, k):
+  if k>26:
+    k=k%26
+  a="abcdefghijklmnopqrstuvwxyz"
+  b=a.upper()
+  A=a[k:]+a[:k]
+  B=b[k:]+b[:k]
+  t=""
+  for i in s:
+    if ((i not in a) and (i not in b)):
+      t+=i
+    if i in a:
+      t+=A[a.index(i)]
+    if i in b:
+      t+=B[b.index(i)]
+  return t
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    s = input()
+
+    k = int(input().strip())
+
+    result = caesarCipher(s, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
