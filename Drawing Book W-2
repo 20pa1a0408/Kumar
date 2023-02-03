@@ -1,0 +1,52 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+def pageCount(n, p):
+  m=1
+  t=n
+  ff=0
+  fb=0
+  if(p>n):
+    return 0
+  while(True):
+    if(p==1):
+      break
+    ff+=1
+    m+=2
+    if(p==m or p==m-1):
+      break
+  if(n%2==0):
+    while(True):
+      if(p==n):
+        break
+      fb+=1
+      t-=2
+      if(p==t or p==t+1):
+        break
+  if(n%2==1):  
+    while(True):
+      if(p==n or p==n-1):
+        break
+      fb+=1
+      t-=2
+      if(p==t or p==t-1):
+        break
+  if(ff>=fb):
+    return fb
+  return ff
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    p = int(input().strip())
+
+    result = pageCount(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
